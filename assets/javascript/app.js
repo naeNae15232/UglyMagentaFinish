@@ -11,6 +11,9 @@ $(document).ready(function(){
         messagingSenderId: "357761868557"
     };
     firebase.initializeApp(config);
+    var database = firebase.database();
+    var logCharacter = "";
+
 
     //create list of characters with properties
     var characters = {
@@ -84,4 +87,17 @@ $(document).ready(function(){
             });
     });
 
+    $("#charactersDiv").on("click", function(event) {
+       
+        event.preventDefault();
+
+        logCharacter = $("#charactersDiv").val().trim();
+
+        database.ref().push({
+            logCharacter: logCharacter,
+            
+        })
+        console.log(logCharacter)
+    });
+  
 });
