@@ -12,28 +12,64 @@ $(document).ready(function(){
     };
     firebase.initializeApp(config);
 
+
+    // Character Name	Suggested Search Parameter
+
+    // Bronn	        bronn
+    // Brynden Tully	brynden
+    // Cersei	        cersei
+    // The Hound	    hound
+    // Jaime Lannister	jaime
+    // Littlefinger	    littlefinger
+    // Olenna Tyrell	olenna
+    // Renly Baratheon	renly
+    // Tyrion	        tyrion
+    // Varys	        varys
+
     //create list of characters with properties
     var characters = {
-        "Jon Snow": {
-            name: "Jon Snow",
-            image: "assets/images/jonsnow1.jpg"
+        "bronn": {
+            name: "Bronn",
+            image: "assets/images/Bronn.jpg"
+            // quote: '"Sometimes there Is no happy choice, only one less grievous than the others.", "I do know some things, I know I love you. I know you love me. I have to go home now.", "We look up at the same stars and see such different things.", "If I fall, dont bring me back."'
         },
-        "Tyrion Lannister": {
+        "brynden": {
+            name: "Brynden Tully",
+            image: "assets/images/Blackfish.png"
+        },
+        "cersei": {
+            name: "Cersei Lannister",
+            image: "assets/images/CerseiLannister.png"
+        },
+        "hound": {
+            name: "The Hound",
+            image: "assets/images/sandorclegane1.jpg"
+        },
+        "jaime": {
+            name: "Jaime Lannister",
+            image: "assets/images/Jaime.jpg"
+        },
+        "littlefinger": {
+            name: "Petyr Baelish",
+            image: "assets/images/Littlefinger.png"
+        },
+        "olenna": {
+            name: "Olenna Tyrell",
+            image: "assets/images/Olenna.png"
+        },
+        "renly": {
+            name: "Renly Baratheon",
+            image: "assets/images/Renly.png"
+        },
+        "tyrion": {
             name: "Tyrion Lannister",
             image: "assets/images/tyrionlannister1.jpg"
         },
-        "Khal Drogo": {
-            name: "Khal Drogo",
-            image: "assets/images/khaldrogo1.jpg"
-        },
-        "Melisandre": {
-            name: "Melisandre",
-            image: "assets/images/melisandre1.jpg"
-        },
-        "Sandor Clegane": {
-            name: "Sandor Clegane",
-            image: "assets/images/sandorclegane1.jpg"
+        "varys": {
+            name: "Lord Varys",
+            image: "assets/images/Varys.png"
         }
+        
     }
 
     //creates the character cards from the characters object to put into the HTML
@@ -65,11 +101,11 @@ $(document).ready(function(){
     //click event for user pressing a character picture
     $("#charactersDiv").on("click", ".character", function() {
         var chosenCharacter = $(this).attr("data-name");
-        // console.log(chosenCharacter);
+        console.log("this", this);
 
         // var queryURL = "https://got-quotes.herokuapp.com/quotes?char=tyrion";
-        var queryURL = "https://got-quotes.herokuapp.com/quotes?char=tyrion";
-
+        var queryURL = "https://got-quotes.herokuapp.com/quotes?char=" + chosenCharacter + "";
+        console.log(queryURL);
         $.ajax({
             url: queryURL,
             method: "GET"
