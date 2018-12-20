@@ -32,7 +32,11 @@ img {
     border-radius: 10px;
     
 }
-
+#Qtable{
+    width: fit-content;
+    font-size: 15px;
+    background: rgba(82, 118, 209, 0.4);
+}
 @font-face {
     font-family: "got";
     src: url(fonts/got.ttf);
