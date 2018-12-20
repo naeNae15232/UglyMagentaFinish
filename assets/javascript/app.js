@@ -35,16 +35,13 @@ $(document).ready(function(){
             image: "assets/images/sandorclegane1.jpg"
         }
     }
-    // console.log(characters["Jon Snow"].image);
 
-    //creates the character objects from the characters object to put into the HTML
+    //creates the character cards from the characters object to put into the HTML
     function createCharactersDiv (character, key) {
         var charDiv = $("<div class='character' data-name='" + key + "'>");
         var charName = $("<div class='characterName'>").text(character.name);
         var charImage = $("<img alt='image' class='characterImage'>").attr('src', character.image);
-        console.log(charImage);
-        var charHealth = $("<div class='characterHealthPoints'>").text(character.healthPoints);
-        charDiv.append(charName).append(charImage).append(charHealth);
+        charDiv.append(charName).append(charImage);
         return charDiv;
     }
 
@@ -76,12 +73,12 @@ $(document).ready(function(){
         $.ajax({
             url: queryURL,
             method: "GET"
-          })
+        })
             // After data comes back from the request
             .then(function(response) {
-              console.log(queryURL);
-              console.log(response);
-              // storing the data from the AJAX request in the results variable
+                console.log(queryURL);
+                console.log(response);
+                // storing the data from the AJAX request in the results variable
             //   var results = response.data;
             $("#quote").text(response.quote + " ~ " + response.character);
             });
