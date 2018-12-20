@@ -11,6 +11,9 @@ $(document).ready(function(){
         messagingSenderId: "357761868557"
     };
     firebase.initializeApp(config);
+    var database = firebase.database();
+    var logCharacter = "";
+
 
 
     // Character Name	Suggested Search Parameter
@@ -120,4 +123,17 @@ $(document).ready(function(){
             });
     });
 
+    $("#charactersDiv").on("click", function(event) {
+       
+        event.preventDefault();
+
+        logCharacter = $("#charactersDiv").val().trim();
+
+        database.ref().push({
+            logCharacter: logCharacter,
+            
+        })
+        console.log(logCharacter)
+    });
+  
 });
