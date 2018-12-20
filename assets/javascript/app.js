@@ -80,8 +80,21 @@ $(document).ready(function(){
                 console.log(response);
                 // storing the data from the AJAX request in the results variable
             //   var results = response.data;
-            $("#quote").text(response.quote + " ~ " + response.character);
+            var quoteString = response.quote + " ~ " + response.character;
+            $("#quote").text(quoteString);
+            addToTable(quoteString);
             });
     });
+    function addToTable(q, t){
+        var quote = q;
+        var translation = t;
+
+        var newRow = $("<tr>").addClass("row").append(
+            $("<td>").text(quote).addClass("col-lg-6"),
+            $("<td>").text(translation).addClass("col-lg-6"),
+        );
+        $("tbody").prepend(newRow);
+    }
+
 
 });
