@@ -2,12 +2,13 @@ body {
     margin: auto;
     text-align: center;
     color: white;
-    font-size: 20px;
+    font-size: 14px;
     font-family: got;
 }
+
 .jumbotron {
     background: none;
-    color: white;
+    color: yellow;
     padding: 10px;
 }
 
@@ -30,7 +31,6 @@ img {
     background: rgba(82, 118, 209, 0.4);
     padding: 10px;
     border-radius: 10px;
-    
 }
 
 @font-face {

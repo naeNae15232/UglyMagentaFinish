@@ -12,14 +12,16 @@ $(document).ready(function(){
     };
     firebase.initializeApp(config);
 
+    var uri = "";
+
     //create list of characters with properties
     var characters = {
         "Jon Snow": {
             name: "Jon Snow",
             image: "assets/images/jonsnow1.jpg"
         },
-        "Tyrion Lannister": {
-            name: "Tyrion Lannister",
+        "Tyrion": {
+            name: "Tyrion",
             image: "assets/images/tyrionlannister1.jpg"
         },
         "Khal Drogo": {
@@ -65,10 +67,10 @@ $(document).ready(function(){
     //click event for user pressing a character picture
     $("#charactersDiv").on("click", ".character", function() {
         var chosenCharacter = $(this).attr("data-name");
-        // console.log(chosenCharacter);
+        console.log(chosenCharacter);
 
-        // var queryURL = "https://got-quotes.herokuapp.com/quotes?char=tyrion";
-        var queryURL = "https://got-quotes.herokuapp.com/quotes?char=tyrion";
+        var queryURL = "https://got-quotes.herokuapp.com/quotes?char=" + chosenCharacter;
+        console.log(queryURL);
 
         $.ajax({
             url: queryURL,
@@ -76,12 +78,23 @@ $(document).ready(function(){
         })
             // After data comes back from the request
             .then(function(response) {
-                console.log(queryURL);
-                console.log(response);
-                // storing the data from the AJAX request in the results variable
-            //   var results = response.data;
-            $("#quote").text(response.quote + " ~ " + response.character);
+            // storing the data from the AJAX request in the results variable
+            var fetchedQuote = response.quote;
+            $("#quote").text(fetchedQuote + " ~ " + response.character);
+
+            uri = "https://api.funtranslations.com/translate/dothraki.json?text=" + encodeURIComponent(fetchedQuote);
             });
+        
+        // $.ajax({
+        //     url: uri,
+        //     method: "GET"
+        // })
+        //     // After data comes back from the request
+        //     .then(function(response) {
+        //     // storing the data from the AJAX request in the results variable
+        //     var translatedQuote = response.contents.translated;
+        //     $("#translated").text(response.contents.translated);
+        //     });
     });
 
 });
