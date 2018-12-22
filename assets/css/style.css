@@ -1,0 +1,43 @@
+body {
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: got;
+}
+.jumbotron {
+    background: none;
+    color: white;
+    padding: 10px;
+}
+
+img {
+	height: 150px;
+	width: 150px;
+	border-radius: 10px;
+}
+
+.character {
+    display: inline-block;
+    color: white;
+    margin: 10px;
+    position: relative;
+    font-size: 12px;
+}
+
+#quote {
+    margin: 20px;
+    background: rgba(82, 118, 209, 0.4);
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+#Qtable{
+    width: fit-content;
+    font-size: 15px;
+    background: rgba(82, 118, 209, 0.4);
+}
+@font-face {
+    font-family: "got";
+    src: url(fonts/got.ttf);
+}
