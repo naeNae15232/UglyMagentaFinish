@@ -7,64 +7,97 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+
+    <!-- <nav class="navbar transparent">
+      <button class="btn btn-outline-light my-2 my-sm-0" id="peopleButton" type="submit">People</button>
+      <button class="btn btn-outline-light my-2 my-sm-0" id="houseButton" type="submit">Houses</button>
+      <button class="btn btn-outline-light my-2 my-sm-0" id="monstersButton" type="submit">Monsters</button>
+      <button class="btn btn-outline-light my-2 my-sm-0" id="quoteButton" type="submit">Quotes</button>
+      <button class="btn btn-outline-light my-2 my-sm-0" id="placesButton" type="submit">Places</button>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="input" id="searchInput" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" id="searchButton" type="submit">Search</button>
+      </form>
+    </nav> -->
+
+    <div class="full-width">
+        <div class="container-fluid" id="navbarContainer">
+            <nav class="navbar navbar-expand-md navbar-light mb-3 mt-0">
+                
+                <form class="form-inline">
+                    <button class="btn btn-primary my-2 my-sm-0 mr-2" id="searchButton" type="submit">Search</button>
+                    <input class="form-control mr-sm-2" type="input" id="searchInput" aria-label="Search">
+                </form> 
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <button class="btn btn-outline-light my-2 my-sm-0 mr-2" id="peopleButton" type="submit">People</button>
+                        </li>
+                        <li class="nav-item">
+                        <button class="btn btn-outline-light my-2 my-sm-0 mr-2" id="houseButton" type="submit">Houses</button>
+                        </li>
+                        <li class="nav-item">
+                        <button class="btn btn-outline-light my-2 my-sm-0 mr-2" id="monstersButton" type="submit">Monsters</button>
+                        </li> 
+                        <li class="nav-item">
+                        <button class="btn btn-outline-light my-2 my-sm-0 mr-2" id="quoteButton" type="submit">Quotes</button>
+                        </li>
+                        <li class="nav-item">
+                        <button class="btn btn-outline-light my-2 my-sm-0" id="placesButton" type="submit">Places</button>
+                        </li>
+                    </ul>    
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    
         
     <div class="jumbotron">
         <h1 class="display-4">Game of Thrones</h1>
-        <p class="lead">Quote Translator</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg"  role="button" id="startButton">Start!</a>
-        </p>
+        <p class="lead">portal</p>
     </div>
     
-    <div class="container">
+    <div class="container-fluid" id="mainContainer">
 
-        <div class="row">
+        <div class="row" id="charactersRow">
             <div class="col-lg-12">
                 <div id="charactersDiv"></div>
             </div>   
         </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <h5 id="quote"></h5>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <h5 id="translated"></h5>
-            </div>
-        </div>
-        <!-- <div class="row">
-            <div class="col-lg-12">
-                <button type="button" class="btn btn-outline-secondary" id = resentSearch>Searches</button>
-            </div>
-        </div> -->
-
-
-        <div class="row" id="Qtable">
+        
+        <div class="row" id="qTable">
             <table class="table table-sm table-hover col-lg-12" id='quote-table'>
                 <thead >
                   <tr class="row">
-                    <th scope="col" class="col-lg-6">Quote</th>
-                    <th scope="col" class="col-lg-6">translated</th>
+                    <th scope="col" class="col-lg-6" id="quoteCol">English</th>
+                    <th scope="col" class="col-lg-6" id="translatedCol">Dothraki</th>
                   </tr>
                 </thead>  
-                <tbody >
-
+                <tbody>
                 </tbody>
             </table>
         </div>
+
     </div>
 
+    <footer class="footer">
+      <div class="container">
+        <span>Copyright</span>
+      </div>
+    </footer>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="assets/javascript/app.js"></script>
     <script src="assets/javascript/backstretch.js"></script>
 
