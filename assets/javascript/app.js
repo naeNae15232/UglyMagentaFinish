@@ -146,17 +146,17 @@ $(document).ready(function(){
             uri = "https://api.funtranslations.com/translate/dothraki.json?text=" + encodeURIComponent(fetchedQuote);
             });
         
-        // $.ajax({
-        //     url: uri,
-        //     method: "GET"
-        // })
-        //     // After data comes back from the request
-        //     .then(function(response) {
-        //     // storing the data from the AJAX request in the results variable
-        //     var translatedQuote = response.contents.translated;
-        //     $("#translated").text(translatedQuote);
-        //     addToTable(translatedQuote);
-        //     });
+        $.ajax({
+            url: uri,
+            method: "GET"
+        })
+            // After data comes back from the request
+            .then(function(response) {
+            // storing the data from the AJAX request in the results variable
+            var translatedQuote = response.contents.translated;
+            $("#translated").text(translatedQuote);
+            addToTable(translatedQuote);
+            });
         
         function addToTable(q, t){
             var quote = q;

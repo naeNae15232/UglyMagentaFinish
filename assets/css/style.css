@@ -84,7 +84,11 @@ tbody {
     background:rgba(0,0,0,0.5);
     color: rgb(197, 191, 178);
 }
-
+#Qtable{
+    width: fit-content;
+    font-size: 15px;
+    background: rgba(82, 118, 209, 0.4);
+}
 @font-face {
     font-family: "got";
     src: url(fonts/got.ttf);
