@@ -1,15 +1,48 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     margin: auto;
     text-align: center;
     color: white;
     font-size: 14px;
     font-family: got;
+    margin-bottom: 50px; /* Margin bottom for sticky footer */
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#navbarContainer {
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.navbar{
+    background:rgba(0,0,0,0.3) !important;
+}
+
+.navbar-toggler {
+    background:white !important;
+    color: black;
+}
+
+#searchInput {
+    background:rgba(0,0,0,0.3) !important;
+    color: white;
 }
 
 .jumbotron {
     background: none;
     color: yellow;
     padding: 10px;
+}
+
+#mainContainer {
+    margin: 0px;
+    padding: 0px;
 }
 
 img {
@@ -28,9 +61,28 @@ img {
 
 #quote {
     margin: 20px;
-    background: rgba(82, 118, 209, 0.4);
     padding: 10px;
     border-radius: 10px;
+}
+
+#qTable{
+    font-size: 12px;
+    background:  rgba(53, 50, 44, 0.7);
+    margin: 0;
+}
+
+tbody {
+
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px; /* Fixed height of the sticky footer */
+    line-height: 50px; /* Vertically center footer text */
+    background:rgba(0,0,0,0.5);
+    color: rgb(197, 191, 178);
 }
 
 @font-face {
