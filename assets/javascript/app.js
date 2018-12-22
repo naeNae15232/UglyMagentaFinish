@@ -104,6 +104,7 @@ $(document).ready(function(){
         console.log("this", this);
 
         // var queryURL = "https://got-quotes.herokuapp.com/quotes?char=tyrion";
+        // takes clicked on character from CHOSENCHARACTER and throws into query into the API
         var queryURL = "https://got-quotes.herokuapp.com/quotes?char=" + chosenCharacter + "";
         console.log(queryURL);
         $.ajax({
@@ -115,9 +116,24 @@ $(document).ready(function(){
                 console.log(queryURL);
                 console.log(response);
                 // storing the data from the AJAX request in the results variable
-            //   var results = response.data;
+              var results = response.data;
+
+            //   if response contains(dataset) then:
             $("#quote").text(response.quote + " ~ " + response.character);
-            });
+
+
+
+            //  else  $("#quote").text  
+
+
+        //     // var characterArray = Object.keys(characters);
+        // for (var i = 0; i < characterArray.length; i++) {
+        //     var characterIndex = characterArray[i];                              <<<<<<<<<<<<<<WILL NEED TO USE CODE LIKE THIS TO REFERENCE CHARACTERS.NAME.QUOTE
+        //     var character = characters[characterIndex];
+        //     var charDiv = createCharactersDiv(character, characterIndex);
+        //     $('#charactersDiv').append(charDiv);
+        
+        });
     });
 
 });
